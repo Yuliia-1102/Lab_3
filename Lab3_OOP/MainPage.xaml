@@ -7,18 +7,6 @@
         <StackLayout Padding="10, 20, 10, 20" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
             <FlexLayout Direction="Row" HorizontalOptions="Center" JustifyContent="Start" AlignItems="Center" Padding="10, 20, 10, 20" >
                 <Button 
-                    Text="Обрати файл (.json)"
-                    Clicked="OnPickFileClicked"
-                    BackgroundColor="Black"
-                    TextColor="LightGray"
-                    FontAttributes="Bold"
-                    FontSize="13"
-                    Margin="0, 0, 10, 0" 
-                    HorizontalOptions="StartAndExpand"
-                    FlexLayout.AlignSelf="Start"
-                    MaximumHeightRequest="50" 
-                    BorderColor="LightPink" />
-                <Button 
                     Text="Про програму"
                     Clicked="OnHelpBtnClicked"
                     BackgroundColor="Black"
@@ -29,6 +17,18 @@
                     FlexLayout.AlignSelf="Start"
                     MaximumHeightRequest="50" 
                     BorderColor="LightPink" />
+                <Button 
+                    Text="Обрати файл (.json)"
+                    Clicked="OnPickFileClicked"
+                    BackgroundColor="Black"
+                    TextColor="LightGray"
+                    FontAttributes="Bold"
+                    FontSize="13"
+                    Margin="0, 0, 10, 0" 
+                    HorizontalOptions="StartAndExpand"
+                    FlexLayout.AlignSelf="Start"
+                    MaximumHeightRequest="50" 
+                    BorderColor="LightPink" />           
             </FlexLayout>
 
             <StackLayout
