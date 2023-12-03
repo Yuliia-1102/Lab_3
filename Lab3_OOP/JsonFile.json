@@ -1,0 +1,122 @@
+[
+  {
+    "Name": "Інформаційні технології в медицині",
+    "AuthorName": "Головченко К.Д.",
+    "Faculty": "ФКНК",
+    "Department": "ТТП",
+    "DateOfBirth": "23.02.1952",
+    "AuthorPosition": "Доцентка",
+    "Gender": "жінка",
+    "Address": "Київ, Милославська, 60",
+    "Age": "78",
+    "Branch": "Computer Science"
+  },
+  {
+    "Name": "Штучний інтелект",
+    "AuthorName": "Гончар М.І.",
+    "Faculty": "ІПСА",
+    "Department": "ТК",
+    "DateOfBirth": "13.08.1949",
+    "AuthorPosition": "Професор",
+    "Gender": "чоловік",
+    "Address": "Київ, Шухевича, 29",
+    "Age": "78",
+    "Branch": "Artificial Intelligence"
+  },
+  {
+    "Name": "Робототехніка",
+    "AuthorName": "Михайленко С.І.",
+    "Faculty": "ІПСА",
+    "Department": "МІ",
+    "DateOfBirth": "12.05.1953",
+    "AuthorPosition": "Професор",
+    "Gender": "чоловік",
+    "Address": "Одеса, Шевченка, 17",
+    "Age": "80",
+    "Branch": "Robotics"
+  },
+  {
+    "Name": "Екологічні аспекти програмування",
+    "AuthorName": "Сидоренко О.М.",
+    "Faculty": "ФІОТ",
+    "Department": "Екологічне програмування",
+    "DateOfBirth": "12.05.1953",
+    "AuthorPosition": "Аспірантка",
+    "Gender": "жінка",
+    "Address": "Одеса, Шевченка, 34",
+    "Age": "90",
+    "Branch": "Environmental Programming"
+  },
+  {
+    "Name": "Інтернет речей",
+    "AuthorName": "Михайленко С.І.",
+    "Faculty": "ФКНК",
+    "Department": "Інформатика",
+    "DateOfBirth": "12.07.1949",
+    "AuthorPosition": "Доцент",
+    "Gender": "чоловік",
+    "Address": "Київ, Перемоги, 34",
+    "Age": "90",
+    "Branch": "Artificial Intelligence"
+  },
+  {
+    "Name": "Системи автоматизації виробництва",
+    "AuthorName": "Сидоренко О.М.",
+    "Faculty": "ФКНК",
+    "Department": "МІ",
+    "DateOfBirth": "13.04.1945",
+    "AuthorPosition": "Професор",
+    "Gender": "жінка",
+    "Address": "Київ, Політехнічна, 5",
+    "Age": "91",
+    "Branch": "Industrial Automation"
+  },
+  {
+    "Name": "Безпека мереж інтернету",
+    "AuthorName": "Гриценко Г.Г.",
+    "Faculty": "ФІОТ",
+    "Department": "Інформатика",
+    "DateOfBirth": "12.08.1948",
+    "AuthorPosition": "Доцент",
+    "Gender": "жінка",
+    "Address": "Київ, Богомольця, 124",
+    "Age": "90",
+    "Branch": "Information Security"
+  },
+  {
+    "Name": "Інформаційні системи управління",
+    "AuthorName": "Тимченко С.А.",
+    "Faculty": "ФКНК",
+    "Department": "ТК",
+    "DateOfBirth": "14.12.1947",
+    "AuthorPosition": "Професор",
+    "Gender": "жінка",
+    "Address": "Київ, Комарова, 2",
+    "Age": "91",
+    "Branch": "Computer Science"
+  },
+  {
+    "Name": "Інтерфейси користувача",
+    "AuthorName": "Гончар М.І.",
+    "Faculty": "ФКНК",
+    "Department": "ТТП",
+    "DateOfBirth": "12.09.1948",
+    "AuthorPosition": "Професор",
+    "Gender": "чоловік",
+    "Address": "Київ, Комарова, 2",
+    "Age": "90",
+    "Branch": "Frontend developing"
+  },
+  {
+    "Name": "Методи обробки великих даних",
+    "AuthorName": "Михайленко С.І.",
+    "Faculty": "ФІОТ",
+    "Department": "Інформатика",
+    "DateOfBirth": "12.09.1948",
+    "AuthorPosition": "Доцент",
+    "Gender": "жінка",
+    "Address": "Київ, Політехнічна, 51",
+    "Age": "88",
+    "Branch": "Data Science"
+  }
+]

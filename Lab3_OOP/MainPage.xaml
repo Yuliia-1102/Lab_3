@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab3_OOP.MainPage">
+
+    <ScrollView>
+        <StackLayout Padding="10, 20, 10, 20" HorizontalOptions="FillAndExpand" VerticalOptions="Start" >
+            <FlexLayout Direction="Row" HorizontalOptions="Center" JustifyContent="Start" AlignItems="Center" Padding="10, 20, 10, 20" >
+                <Button 
+                    Text="Обрати файл (.json)"
+                    Clicked="OnPickFileClicked"
+                    BackgroundColor="Black"
+                    TextColor="LightGray"
+                    FontAttributes="Bold"
+                    FontSize="13"
+                    Margin="0, 0, 10, 0" 
+                    HorizontalOptions="StartAndExpand"
+                    FlexLayout.AlignSelf="Start"
+                    MaximumHeightRequest="50" 
+                    BorderColor="LightPink" />
+                <Button 
+                    Text="Про програму"
+                    Clicked="OnHelpBtnClicked"
+                    BackgroundColor="Black"
+                    TextColor="LightGray"
+                    FontAttributes="Bold"
+                    FontSize="13"
+                    HorizontalOptions="StartAndExpand"
+                    FlexLayout.AlignSelf="Start"
+                    MaximumHeightRequest="50" 
+                    BorderColor="LightPink" />
+            </FlexLayout>
+
+            <StackLayout
+                x:Name="filters"
+                IsVisible="false"
+                Margin="0,50,0, 0">
+                <FlexLayout 
+                    Margin="0,0,0,90"
+                    Direction="Row" 
+                    HorizontalOptions="Center" 
+                    JustifyContent="Start" 
+                    AlignItems="Center"
+                    Padding="10, 20, 10, 20"
+                    >
+                    
+                    <Picker 
+                        x:Name="authorPicker" 
+                        Title="Науковець" FontSize="12" 
+                        Margin="0, 0, 10, 0" 
+                        BackgroundColor="LightPink"
+                        WidthRequest="200"
+                        HeightRequest="65"/>
+                    <Picker 
+                        x:Name="facultyPicker" 
+                        Title="Факультет" 
+                        FontSize="12" 
+                        BackgroundColor="LightPink"
+                        Margin="0, 0, 10, 0" 
+                        WidthRequest="200"
+                        HeightRequest="65"/>
+                    <Picker 
+                        x:Name="departmentPicker" 
+                        Title="Кафедра" 
+                        FontSize="12" 
+                        BackgroundColor="LightPink"
+                        WidthRequest="200"
+                        HeightRequest="65"/>
+                </FlexLayout>
+
+                <FlexLayout Direction="Row" HorizontalOptions="Center" JustifyContent="Start" AlignItems="Center" Padding="10, 20, 10, 20">
+                    <Button 
+                        Text="Пошук через LINQ"
+                        Clicked="OnSearchBtnClicked"
+                        BackgroundColor="Black"
+                        TextColor="LightGray"
+                        FontAttributes="Bold"
+                        FontSize="13"
+                        Margin="0, 0, 10, 0" 
+                        HorizontalOptions="StartAndExpand"
+                        FlexLayout.AlignSelf="Start"
+                        MaximumHeightRequest="50" 
+                        BorderColor="DarkSlateGray" />
+                    <Button 
+                        Text="Очистити"
+                        Clicked="OnCleanBtnClicked"
+                        BackgroundColor="Black"
+                        TextColor="LightGray"
+                        FontAttributes="Bold"
+                        FontSize="13"
+                        Margin="0, 0, 10, 0" 
+                        HorizontalOptions="StartAndExpand"
+                        FlexLayout.AlignSelf="Start"
+                        MaximumHeightRequest="50" 
+                        BorderColor="DarkSlateGray" />
+                    <Button 
+                        Text="Серіалізація"
+                        Clicked="SaveJsonBtnClicked"
+                        BackgroundColor="Black"
+                        TextColor="LightGray"
+                        FontAttributes="Bold"
+                        FontSize="13"
+                        Margin="0, 0, 10, 0" 
+                        HorizontalOptions="StartAndExpand"
+                        FlexLayout.AlignSelf="Start"
+                        MaximumHeightRequest="50" 
+                        BorderColor="DarkSlateGray" />
+                    <Button 
+                        Text="Додати"
+                        Clicked="OnAddElemBtnClicked"
+                        BackgroundColor="Black"
+                        TextColor="LightGray"
+                        FontAttributes="Bold"
+                        FontSize="13"
+                        HorizontalOptions="StartAndExpand"
+                        FlexLayout.AlignSelf="Start"
+                        MaximumHeightRequest="50" 
+                        BorderColor="DarkSlateGray" />
+                </FlexLayout>
+            </StackLayout>
+
+            <Label 
+                x:Name="notFoundLabel" 
+                Text="Нічого не знайдено." 
+                FontSize="20" 
+                HorizontalTextAlignment="Center"
+                Margin="0, 30, 0, 0" 
+                IsVisible="false"/>
+
+            <StackLayout x:Name="ResultsContainer" Margin="0, 30, 0, 0" IsVisible="false">
+                <ListView x:Name="ResultsListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame BorderColor="DimGray" Margin="0, 10, 0, 0">
+                                    <StackLayout>
+                                        <FlexLayout Direction="Row" >
+                                            <Label HorizontalOptions="Center" Text="Назва роботи: " FontAttributes="Bold" Margin="0, 0, 2, 0" />
+                                            <Label HorizontalOptions="Center" Text="{Binding Name}"/>
+                                        </FlexLayout>
+                                        <FlexLayout Direction="Row" Margin="0, 3, 0, 0">
+                                            <Label HorizontalOptions="Center" Text="Науковий працівник (П.І.Б.): " FontAttributes="Bold" Margin="0, 0, 2, 0"/>
+                                            <Label HorizontalOptions="Center" Text="{Binding AuthorName}" />
+                                        </FlexLayout>
+                                        <FlexLayout Direction="Row" Margin="0, 3, 0, 0">
+                                            <Label HorizontalOptions="Center" Text="Найвища посада за часів роботи: " FontAttributes="Bold" Margin="0, 0, 2, 0"/>
+                                            <Label HorizontalOptions="Center" Text="{Binding AuthorPosition}" />
+                                        </FlexLayout>
+                                        <FlexLayout Direction="Row" Margin="0, 3, 0, 0">
+                                            <Label HorizontalOptions="Center" Text="Факультет: " FontAttributes="Bold" Margin="0, 0, 2, 0"/>
+                                            <Label HorizontalOptions="Center" Text="{Binding Faculty}" />
+                                        </FlexLayout>
+                                        <FlexLayout Direction="Row" Margin="0, 3, 0, 0">
+                                            <Label HorizontalOptions="Center" Text="Кафедра: " FontAttributes="Bold" Margin="0, 0, 2, 0"/>
+                                            <Label HorizontalOptions="Center" Text="{Binding Department}" />
+                                        </FlexLayout>
+                                        <FlexLayout Direction="Row" Margin="0, 3, 0, 0">
+                                            <Label HorizontalOptions="Center" Text="Дата народження: " FontAttributes="Bold" Margin="0, 0, 2, 0"/>
+                                            <Label HorizontalOptions="Center" Text="{Binding DateOfBirth}" />
+                                        </FlexLayout>
+                                        <FlexLayout Direction="Row" Margin="0, 3, 0, 0">
+                                            <Label HorizontalOptions="Center" Text="Стать: " FontAttributes="Bold" Margin="0, 0, 2, 0"/>
+                                            <Label HorizontalOptions="Center" Text="{Binding Gender}" />
+                                        </FlexLayout>
+                                        <FlexLayout Direction="Row" Margin="0, 3, 0, 0">
+                                            <Label HorizontalOptions="Center" Text="Адреса науковця: " FontAttributes="Bold" Margin="0, 0, 2, 0"/>
+                                            <Label HorizontalOptions="Center" Text="{Binding Address}" />
+                                        </FlexLayout>
+                                        <FlexLayout Direction="Row" Margin="0, 3, 0, 0">
+                                            <Label HorizontalOptions="Center" Text="Вік: " FontAttributes="Bold" Margin="0, 0, 2, 0"/>
+                                            <Label HorizontalOptions="Center" Text="{Binding Age}" />
+                                        </FlexLayout>
+                                        <FlexLayout Direction="Row" Margin="0, 3, 0, 0">
+                                            <Label HorizontalOptions="Center" Text="Галузь роботи: " FontAttributes="Bold" Margin="0, 0, 2, 0"/>
+                                            <Label HorizontalOptions="Center" Text="{Binding Branch}" />
+                                        </FlexLayout>
+                                        <FlexLayout Direction="Row" Margin="0,20,0, 0">
+                                            <Button 
+                                                Text="Видалити"
+                                                Clicked="DeleteButtonClicked"
+                                                BackgroundColor="LightGray"
+                                                TextColor="Black"
+                                                FontAttributes="Bold"
+                                                FontSize="13"
+                                                HorizontalOptions="StartAndExpand"
+                                                FlexLayout.AlignSelf="Start"
+                                                MaximumHeightRequest="50" 
+                                                Margin="0, 0, 7, 0" />
+                                            <Button 
+                                                Text="Редагувати"
+                                                Clicked="OnChangeBtnClicked"
+                                                BackgroundColor="LightGray"
+                                                TextColor="Black"
+                                                FontAttributes="Bold"
+                                                FontSize="13"
+                                                HorizontalOptions="StartAndExpand"
+                                                FlexLayout.AlignSelf="Start"
+                                                MaximumHeightRequest="50" />
+                                        </FlexLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
